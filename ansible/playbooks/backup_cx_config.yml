@@ -1,0 +1,18 @@
+- name: Backup Aruba-CX configs 
+  hosts: clab_nodes
+  gather_facts: no
+  collections:
+    - arubanetworks.aoscx
+  tasks:
+    - name: Get running config
+    # the cmd "show running-config" is getting sent of ssh, and the output for stdout is going to register var named "running_config"
+    # config is then in memory as a string not a file
+      aoscx_command:
+        commands:
+          - show running-config
+      register: running_config
+   # the running_config string is then copied to mounted volume on the ansible container
+    - name: Copy config to SCP server
+      ansible.builtin.copy:
+        content: "{{ running_config.stdout[0] }}"
+        dest: "/ansible/documentation/{{ inventory_hostname }}-running-config.txt"

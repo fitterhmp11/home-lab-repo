@@ -1,0 +1,15 @@
+name: arubacx-and-host
+topology:
+  nodes:
+    cx1:
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+      startup-config: cx1.txt
+      mgmt-ipv4: 172.20.20.10
+    host1:
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 192.168.10.2/24 dev eth1
+  links:
+    - endpoints: ["cx1:1/1/2","host1:eth1"]

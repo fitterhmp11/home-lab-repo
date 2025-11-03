@@ -1,0 +1,26 @@
+# Ignore secrets and private data
+secrets/
+*.pem
+*.key
+*.pub
+*.crt
+*.pfx
+*.env
+
+# Ignore runtime and local artifacts
+__pycache__/
+*.log
+*.tmp
+*.bak
+*.swp
+*.pid
+*.sock
+
+# Ignore Containerlab build outputs
+containerlab/*.clab_graph.json
+containerlab/*/clab-*
+
+# Ignore VS Code settings
+.vscode/
+# ignore compiled files and secrets
+secrets/

@@ -1,0 +1,98 @@
+ancestor: null
+releases:
+  4.1.0:
+    changes:
+      major_changes:
+      - Bug fixes.
+      - Feature not yet supported, Port Security and Speed Duplex.
+      - New feature supported, OSPFv2 and OSPFv3.
+      release_summary: Feature OSPF and bug fixes.
+    release_date: '2022-08-04'
+  4.1.1:
+    changes:
+      major_changes:
+      - Fix Checkpoint module that was showing 404 error (https://github.com/aruba/aoscx-ansible-collection/issues/33).
+      - Fix Facts module for 6xxx platforms (https://github.com/aruba/aoscx-ansible-collection/issues/27).
+      - Fix Static MAC module.
+      - Fix compatibility issue with Ansible version 2.13 (https://github.com/aruba/aoscx-ansible-collection/issues/39).
+      - Fix for ACL module, delete ACE.
+      - Support for anti-CSRF tokens for REST API.
+      - Fix Github action Ansible-test (https://github.com/aruba/aoscx-ansible-collection/issues/40).
+      - Update versions in Ansible-test (https://github.com/aruba/aoscx-ansible-collection/issues/35).
+      minor_changes:
+      - Added option to set REST version (10.04, 10.08, 10.09).
+      - Fix default string value (https://github.com/aruba/aoscx-ansible-collection/issues/42).
+      release_summary: Bug fixes release
+    release_date: '2022-10-19'
+  4.2.0:
+    changes:
+      major_changes:
+      - Add speed and duplex support (aoscx_interface).
+      - Add port security support (aoscx_l2_interface).
+      - Add new modules for PoE (aoscx_poe), MAC (aoscx_mac) and Static MAC (aoscx_static_mac)
+      - Fix module aoscx_upload_firmware for local path (https://github.com/aruba/aoscx-ansible-collection/issues/28).
+      - Fix module aoscx_upload firmware using HTTP.
+      - Include fixes for issues found internally.
+      minor_changes:
+      - Fix Interface MTU support (https://github.com/aruba/aoscx-ansible-collection/issues/38).
+      - Fix idempotency in ACL module.
+      release_summary: New features (port security, PoE, MAC, static MAC and speed/duplex) and bugfixes
+    release_date: '2023-03-06'
+  4.2.1:
+    changes:
+      major_changes:
+      - Fix module aoscx_facts (failing on 6000 and 6100, also with other platforms when stressing the device).
+      - Remove legacy code not using the pyaoscx library.
+      - Fix errors in documentation.
+      minor_changes:
+      - Fix sanity errors for Ansible 2.12.
+      release_summary: Documentation and bug fixes release
+    release_date: '2023-06-08'
+  4.3.0:
+    changes:
+      major_changes:
+      - Add new modules for LAG (aoscx_lag_interface) and DNS (aoscx_dns)
+      - Add enhancements for VLAN module by Alexis La Goutte (https://github.com/aruba/aoscx-ansible-collection/pull/60)
+      - Include fixes for issues found internally.
+      minor_changes:
+      - Fix aoscx_command module (https://github.com/aruba/aoscx-ansible-collection/issues/70)
+      - Fix Facts Ansible module. The ``gather_subset`` choices ``management_interface``
+        , ``platform_name``, ``host_name``, ``product_info``, ``software_images`` are working
+        again. (https://github.com/aruba/aoscx-ansible-collection/issues/76)
+      - The ``gather_subsets`` choice ``config`` is not available yet and it will be available
+        in a future release.
+      - Fix sanity tests errors.
+      release_summary: New features (LAG and DNS), enhancements (VLAN) and bugfixes
+    release_date: '2023-08-30'
+  4.3.1:
+    changes:
+      major_changes:
+      - Add option lldp_neighbors to aoscx_facts (https://github.com/aruba/aoscx-ansible-collection/issues/79)
+      - Bugfixes for vrf attach in l3 Interface module
+      minor_changes:
+      - Add support for cgroupv2 and Ubuntu 22.04 by Alexis La Goutte(https://github.com/ansible-collections/collection_template/pull/56)
+      - Fix in README for requirements documentation by Olivier Magloire (https://github.com/aruba/aoscx-ansible-collection/pull/74)
+      - Add documentation for passive and active interfaces in ospf module (https://github.com/aruba/aoscx-ansible-collection/issues/65)
+      release_summary: Fixes for documentation, enhancements (aoscx_facts) and bugfixes (aoscx_l3_interface)
+    release_date: '2023-11-10'
+  4.3.2:
+    changes:
+      major_changes:
+      - Fix errors for aoscx_upload_firmware when a non mgmt VRF is used
+      - Fix error for aoscx_upload_firmware processing the command Code 502 (https://github.com/aruba/aoscx-ansible-collection/issues/94)
+      - Fix error for aoscx_upload_firmware 401 Authorization Required Aruba CX 6200f / 6300M (https://github.com/aruba/aoscx-ansible-collection/issues/78)
+      minor_changes:
+      - Fix error in sanity tests for Ansible 2.16
+      release_summary: Fixes for aoscx_upload_firmware
+    release_date: '2024-03-01'
+  4.4.0:
+    changes:
+      major_changes:
+      - ACL module fixes and enhancements (Ports and protocols can be set by name, like in CLI; TCP flags can be specified in a list, modules ``aoscx_acl_interface`` and ``aoscx_acl_vlan`` are now deprecated and attaching ACL can be done with ``aoscx_interface``, ``aoscx_vlan`` and ``aoscx_vlan_interface`` as needed
+      - New module ``aoscx_object_group``
+      - Fix Fault in aoscx_acl, suboptions do not work (https://github.com/aruba/aoscx-ansible-collection/issues/84)
+      - Fix Fault in aoscx_acl module, error when updating existing acl (https://github.com/aruba/aoscx-ansible-collection/issues/85)
+      - Fixes for issues found internally
+      minor_changes:
+      release_summary: Bugfixes and ACL module enhancements
+    release_date: '2024-05-01'

@@ -1,0 +1,11 @@
+- name: Backup Module Aruba-CX config
+  hosts: clab_nodes
+  gather_facts: no
+  collections:
+    - arubanetworks.aoscx
+  tasks:
+    - name: Backup running config
+      arubanetworks.aoscx.aoscx_config:
+        backup: yes
+        backup_options:
+          filename: "{{ inventory_hostname }}-module_running-config.txt"

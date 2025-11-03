@@ -1,0 +1,34 @@
+Current configuration:
+!
+!Version ArubaOS-CX Virtual.10.13.1110
+!export-password: default
+hostname cx1
+user admin group administrators password ciphertext AQBapQi81VjDak4+3EPtBbyuRmaDzEqaPNy9hb9p9sf9IGqhYgAAAEh3iaxtZEtEFt+lD0apNgNCCrH9jOxtaq5odCOGBlnlyrgZZ71s9xt78jqBsZLxiX6N9K4x/6kxK8Ag7EEJlHB4URKDc6CNcZF7knPz6UbxRWf5I9reWZMJIN1u9SsFi2Gp
+ntp server pool.ntp.org minpoll 4 maxpoll 4 iburst
+ntp enable
+ntp vrf mgmt
+!
+!
+!
+!
+!
+!
+ssh server vrf mgmt
+vlan 1
+interface mgmt
+    no shutdown
+    ip static 10.0.0.15/24
+    default-gateway 10.0.0.2
+interface 1/1/1
+    no shutdown
+    ip address 192.168.200.1/24
+interface 1/1/2
+    description to-host1
+    no shutdown
+    ip address 192.168.10.1/24
+!
+!
+!
+!
+!
+https-server vrf mgmt

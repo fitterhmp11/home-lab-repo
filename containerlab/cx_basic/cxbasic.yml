@@ -1,0 +1,45 @@
+name: cxbasic
+topology:
+  nodes:
+    aoscx1:
+      group: 10
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+      startup-config: aoscx1.cfg
+      mgmt-ipv4: 172.20.20.10
+    aoscx2:
+      group: 9
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+      startup-config: aoscx2.cfg
+      mgmt-ipv4: 172.20.20.20
+    aoscx3:
+      group: 9
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+      startup-config: aoscx3.cfg
+      mgmt-ipv4: 172.20.20.30
+    hostA:
+      group: 8
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.2.2.2/24 dev eth1
+        - ip route add 10.3.0.0/16 via 10.2.2.1 dev eth1
+        - ip route add 192.168.0.0/16 via 10.2.2.1 dev eth1
+    hostB:
+      group: 8
+      kind: linux
+      image: alpine:latest
+      exec:
+        - ip addr add 10.3.3.2/24 dev eth1
+        - ip route add 10.2.0.0/16 via 10.3.3.1 dev eth1
+        - ip route add 192.168.0.0/16 via 10.3.3.1 dev eth1
+  links:
+    - endpoints: ["aoscx1:1/1/1","aoscx2:1/1/1"]
+    - endpoints: ["aoscx1:1/1/2","aoscx2:1/1/2"]
+    - endpoints: ["aoscx1:1/1/3","aoscx3:1/1/1"]
+    - endpoints: ["aoscx1:1/1/4","aoscx3:1/1/2"]
+    - endpoints: ["aoscx2:1/1/3","aoscx3:1/1/3"]
+    - endpoints: ["aoscx2:1/1/5","hostA:eth1"]
+    - endpoints: ["aoscx3:1/1/5","hostB:eth1"]
