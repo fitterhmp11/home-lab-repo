@@ -55,6 +55,9 @@ ansible/
 
 ## Progress Log
 
+2025-11-03: Setup the github repo.  configured correct .gitignore and ssh key info on the local.  then pushed to github
+
+
 2025-10-28: connected scp-server and ansible container clab network.  Setup inventory(host) file for arubacx_and_host lab.  modified the ansible cfg file.  Created playbook to take back of running config.  Issues with chatgpt collection names, and needed additional python dependancies to run the playbook using ssh (needed paramiko and another library).  The aruba cx offical documentation uses the API calls, GPT was giving me playbooks using the network_cli connection.  fixed the host file and the playbooks to have correct syntex, disabled auhtorized key authentication in favor of admin/password and was able get a working playbook called "backup_cx_config" that save the output of the show running configuration to a string variable, then writes it to mounted directory on host.
 
 2025-10-27:Installed containerlab vscode extesion and tested running clab and connecting to nodes directly from vscode
