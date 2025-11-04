@@ -346,9 +346,6 @@
         },
         "ntp_config_vrf": "mgmt",
         "qos_cos_map_entries": {
-            "0": {
-                "code_point": 0
-            },
             "1": {
                 "code_point": 1
             },
@@ -372,9 +369,6 @@
             }
         },
         "qos_dscp_map_entries": {
-            "0": {
-                "code_point": 0
-            },
             "1": {
                 "code_point": 1
             },
@@ -585,7 +579,14 @@
         "admin": {
             "name": "admin",
             "origin": "built-in",
-            "password": "AQBapfEg+XSsFIaR78sfbn6xKTTcGw57/8zujwGYmxUWF0ZiYgAAAE0iF1UxTHTjTyEXyRk/BAIbS9eDnQJa3a19mlmm+OMCSeiewMYb0SMNeG+bjMDeYvCqH61B7BZJWH58d/LzvE3JSne1+usiMAnR56vP6wjgue83HanSyZv858AmfmljjcKE"
+            "password": "AQBapXgXEruNEMBHmTMQZ6/DikHCVV6mhrQ59r0I21RXrKtWYgAAAArl7YWj7TLg5ytU+xSAUCnag2PoE4vMakqi1I5Y/caHG04xHZiWHqEBtZymwNnQinNEBqoowUpRyWNDSj2cggzvCJVm3LeiAdAbC+902awRIz+E4sgRVOvve7YssGH5fo+W"
+        }
+    },
+    "VLAN": {
+        "300": {
+            "description": "This is VLAN 300 created by ansible",
+            "id": 300,
+            "name": "UPLINK_VLAN"
         }
     },
     "VRF": {

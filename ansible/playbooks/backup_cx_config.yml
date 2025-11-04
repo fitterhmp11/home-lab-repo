@@ -1,4 +1,5 @@
 - name: Backup Aruba-CX configs 
+# this uses cli to copy the running config to documentation
   hosts: clab_nodes
   gather_facts: no
   collections:

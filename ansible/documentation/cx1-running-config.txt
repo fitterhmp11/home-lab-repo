@@ -3,7 +3,7 @@ Current configuration:
 !Version ArubaOS-CX Virtual.10.13.1110
 !export-password: default
 hostname cx1
-user admin group administrators password ciphertext AQBapQi81VjDak4+3EPtBbyuRmaDzEqaPNy9hb9p9sf9IGqhYgAAAEh3iaxtZEtEFt+lD0apNgNCCrH9jOxtaq5odCOGBlnlyrgZZ71s9xt78jqBsZLxiX6N9K4x/6kxK8Ag7EEJlHB4URKDc6CNcZF7knPz6UbxRWf5I9reWZMJIN1u9SsFi2Gp
+user admin group administrators password ciphertext AQBapXgXEruNEMBHmTMQZ6/DikHCVV6mhrQ59r0I21RXrKtWYgAAAArl7YWj7TLg5ytU+xSAUCnag2PoE4vMakqi1I5Y/caHG04xHZiWHqEBtZymwNnQinNEBqoowUpRyWNDSj2cggzvCJVm3LeiAdAbC+902awRIz+E4sgRVOvve7YssGH5fo+W
 ntp server pool.ntp.org minpoll 4 maxpoll 4 iburst
 ntp enable
 ntp vrf mgmt
@@ -15,6 +15,9 @@ ntp vrf mgmt
 !
 ssh server vrf mgmt
 vlan 1
+vlan 300
+    name UPLINK_VLAN
+    description This is VLAN 300 created by ansible
 interface mgmt
     no shutdown
     ip static 10.0.0.15/24
