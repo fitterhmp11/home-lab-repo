@@ -8,12 +8,14 @@ services:
     volumes:
       - ../../ansible:/ansible        # maps home-lab-repo/ansible → /ansible in container
       - ~/.ssh:/root/.ssh:ro          # mounts SSH keys
-      #ansible will use the hosts private key to try to connect to devices such as scp-server.  scp-server is configured to use the public key to authorize a user
-
     environment:
-    # ANSIBLE_CONFIG is an env variable inside the container that tells ansible exatcly where the ansible.cfg file is.  makes it easy to run ansible comands from inside the container.
       - ANSIBLE_CONFIG=/ansible/ansible.cfg
-    # these keep the conatiner interactive, so can connect without it exiting
     tty: true
     stdin_open: true
-    
+    networks:
+      clab:
+        ipv4_address: 172.20.20.200
+
+networks:
+  clab:
+    external: true
