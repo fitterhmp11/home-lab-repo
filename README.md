@@ -55,6 +55,9 @@ ansible/
 
 ## Progress Log
 
+2025-11-11:
+Created playbook to upload json config from local file to cx node running config.
+
 2025-11-10:
 Tested and modified the playbook backup_module_cx to save the running config with the ansible hostname in the file.  Created a gather_facts playbook, but issues with it was getting the linux QUEMU host info, not the CX node.  Modified it to specifically gather facts from ArubaCX, and it generated a lot and took while, then errored.  further troubleshooting needed.
 
