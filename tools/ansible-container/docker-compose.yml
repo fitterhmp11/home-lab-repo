@@ -1,4 +1,4 @@
-version: "3.9"
+#version: "3.9" i was warned this attribute is obsolete
 
 services:
   ansible:

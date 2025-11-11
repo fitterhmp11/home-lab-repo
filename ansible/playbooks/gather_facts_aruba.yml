@@ -1,0 +1,25 @@
+# This playbook is not fully operational,  it gathers A LOT of info and fails
+
+
+- name: Gather Aruba CX facts explicitly
+  hosts: clab_nodes
+  gather_facts: no  # Disable automatic gathering
+  collections:
+    - arubanetworks.aoscx
+  tasks:
+    - name: Gather AOS-CX specific facts
+      aoscx_facts:
+        #gather_subset:
+        #  - all
+      register: device_facts
+    
+    - name: Display device facts
+      debug:
+        var: device_facts
+    
+    - name: Show specific facts
+      debug:
+        msg: |
+          Hostname: {{ ansible_net_hostname }}
+          Model: {{ ansible_net_model }}
+          Version: {{ ansible_net_version }}

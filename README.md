@@ -55,6 +55,9 @@ ansible/
 
 ## Progress Log
 
+2025-11-10:
+Tested and modified the playbook backup_module_cx to save the running config with the ansible hostname in the file.  Created a gather_facts playbook, but issues with it was getting the linux QUEMU host info, not the CX node.  Modified it to specifically gather facts from ArubaCX, and it generated a lot and took while, then errored.  further troubleshooting needed.
+
 2025-11-04: testing with ansible to get playbook for both connection types, network_cli and APIREST (now pyaoscx framework).  Updated the playbooks and files repo, adding a few comments.  Then updated my dockerfile and docker-compose so ansible will have needed ubuntu and pythone packages.  rebuilt it and ran it, it connected automatically and the playbook I tested still works.  Updated the arubacx-and-host topology file to install some tools to linux host.  tested with tcpdump
 
 2025-11-03: Setup the github repo.  configured correct .gitignore and ssh key info on the local.  then pushed to github

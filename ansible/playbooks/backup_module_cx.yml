@@ -8,4 +8,4 @@
     - name: Copy Running Config to local as JSON # only works with JSON output
       aoscx_backup_config:
         config_name: running-config-json
-        output_file: /ansible/documentation/running-config.txt
+        output_file: /ansible/documentation/{{inventory_hostname}}-running-config.json

@@ -333,7 +333,7 @@
         }
     },
     "System": {
-        "hostname": "cx1",
+        "hostname": "uploaded-via-ansible-cx1",
         "mgmt_intf": {
             "default_gateway": "10.0.0.2",
             "ip": "10.0.0.15",

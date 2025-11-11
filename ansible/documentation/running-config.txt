@@ -579,14 +579,7 @@
         "admin": {
             "name": "admin",
             "origin": "built-in",
-            "password": "AQBapXgXEruNEMBHmTMQZ6/DikHCVV6mhrQ59r0I21RXrKtWYgAAAArl7YWj7TLg5ytU+xSAUCnag2PoE4vMakqi1I5Y/caHG04xHZiWHqEBtZymwNnQinNEBqoowUpRyWNDSj2cggzvCJVm3LeiAdAbC+902awRIz+E4sgRVOvve7YssGH5fo+W"
-        }
-    },
-    "VLAN": {
-        "300": {
-            "description": "This is VLAN 300 created by ansible",
-            "id": 300,
-            "name": "UPLINK_VLAN"
+            "password": "AQBapb8c5wA2r6FdyG/QJDVlCuE/hak9uJQBoNkC3JGZses1YgAAAGKDx+AVhY5LMKLWDCyol5iQGFE/EfSgEuGFsN3a3HZZqbZnrGsUq+RMT6KcdvOCKXp5lbFulk4x9ZlWxVIPYTgu4QfEHoqsJf2P6oSmFiPGKQ8ZjbZ2FQ+xXyT44g+gIRaw"
         }
     },
     "VRF": {

@@ -1,0 +1,11 @@
+- name: Upload Aruba-CX config from local JSON
+# this uses API to upload a locally stored JSON config to running config
+  hosts: clab_nodes
+  gather_facts: no
+  collections:
+    - arubanetworks.aoscx
+  tasks:
+    - name: Copy Running Config from local JSON file as JSON
+      aoscx_upload_config:
+        config_name: 'running-config'
+        config_file: '/ansible/documentation/upload-running-config.json'
