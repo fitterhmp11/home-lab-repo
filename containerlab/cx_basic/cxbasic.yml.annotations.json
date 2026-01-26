@@ -1,0 +1,65 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1769465681820_2e4b2037",
+      "text": "10.2.2.2",
+      "position": {
+        "x": 6,
+        "y": 205
+      },
+      "fontSize": 14,
+      "fontColor": "#FFFFFF",
+      "backgroundColor": "transparent",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "monospace",
+      "rotation": 0,
+      "roundedBackground": true
+    }
+  ],
+  "freeShapeAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "aoscx3",
+      "position": {
+        "x": 161,
+        "y": 63
+      }
+    },
+    {
+      "id": "aoscx1",
+      "position": {
+        "x": 105,
+        "y": -21
+      }
+    },
+    {
+      "id": "aoscx2",
+      "position": {
+        "x": 35,
+        "y": 63
+      }
+    },
+    {
+      "id": "hostA",
+      "position": {
+        "x": -7,
+        "y": 133
+      }
+    },
+    {
+      "id": "hostB",
+      "position": {
+        "x": 217,
+        "y": 119
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}

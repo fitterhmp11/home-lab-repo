@@ -1,0 +1,25 @@
+---
+- name: Restore running config from a named state
+  hosts: clab_nodes
+  gather_facts: no
+  collections:
+    - arubanetworks.aoscx
+
+  vars:
+    state_name: "{{ state | default('latest') }}"
+
+  tasks:
+    - name: Check that state directory exists
+      stat:
+        path: "/ansible/documentation/states/{{ state_name }}"
+      register: state_dir
+
+    - name: Fail if state directory does not exist
+      fail:
+        msg: "State directory /ansible/documentation/states/{{ state_name }} does not exist!"
+      when: not state_dir.stat.exists
+
+    - name: Restore JSON config to device
+      aoscx_upload_config:
+        config_name: 'running-config'
+        config_file: "{{ config_file | default('/ansible/documentation/states/' ~ state_name ~ '/' ~ inventory_hostname ~ '.json') }}"

@@ -1,0 +1,20 @@
+---
+- name: Backup running config into a named state
+  hosts: clab_nodes
+  gather_facts: no
+  collections:
+    - arubanetworks.aoscx
+  vars:
+    state_name: "{{ state | default('latest') }}"
+
+  tasks:
+    - name: Ensure state directory exists
+      file:
+        path: "/ansible/documentation/states/{{ state_name }}"
+        state: directory
+        mode: '0755'
+
+    - name: Copy Running Config to local as JSON # only works with JSON output
+      aoscx_backup_config:
+        config_name: running-config-json
+        output_file: /ansible/documentation/states/{{ state_name }}/{{ inventory_hostname }}.json

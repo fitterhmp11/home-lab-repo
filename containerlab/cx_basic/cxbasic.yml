@@ -22,7 +22,7 @@ topology:
     hostA:
       group: 8
       kind: linux
-      image: alpine:latest
+      image: nicolaka/netshoot
       exec:
         - ip addr add 10.2.2.2/24 dev eth1
         - ip route add 10.3.0.0/16 via 10.2.2.1 dev eth1
@@ -30,7 +30,7 @@ topology:
     hostB:
       group: 8
       kind: linux
-      image: alpine:latest
+      image: nicolaka/netshoot
       exec:
         - ip addr add 10.3.3.2/24 dev eth1
         - ip route add 10.2.0.0/16 via 10.3.3.1 dev eth1
