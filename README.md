@@ -49,11 +49,15 @@ ansible/
 ├── playbooks/
 │   └── backup.yml     ← first playbook
 ├── collections/
+|-- states
 └── vault/
     └── secrets.yml
 
 
 ## Progress Log
+
+2026-01-25:
+refreshed cxbasic.  Configure ansible playbooks 'checkpoint_backup' and 'checkpoint_restore' that will backup/restore running config of cx devices in lab.  Run the playbook with -e state=state_name where state_name is dir in the documentation folder that allows to keep config in various state or lab.  Can be used for various labs of same topology(ie OSPF, OSPF-multi-area, iBGP, eBGP,vxlan, etc)
 
 2025-11-11:
 Created playbook to upload json config from local file to cx node running config.

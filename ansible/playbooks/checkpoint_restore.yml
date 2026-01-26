@@ -1,4 +1,31 @@
 ---
+# ============================================================================
+# Playbook: checkpoint_restore.yml
+#
+# Purpose:
+#   Restore Aruba CX running configuration from a previously saved JSON
+#   checkpoint created by checkpoint_backup.yml.
+#
+# State Handling:
+#   - Uses the "state" variable to select which checkpoint directory to restore
+#   - Defaults to "latest" if no state is provided
+#
+# Usage Examples:
+#   Restore all devices from latest:
+#     ansible-playbook checkpoint_restore.yml
+#
+#   Restore OSPF state to all devices:
+#     ansible-playbook checkpoint_restore.yml -e state=ospf
+#
+#   Restore only cx1 from BGP state:
+#     ansible-playbook checkpoint_restore.yml -e state=bgp -l cx1
+#
+# Notes:
+#   - Designed for Containerlab Aruba CX topology
+#   - Uses REST API (pyaoscx), not SSH
+#   - JSON files must exist for each target device
+# ============================================================================
+
 - name: Restore running config from a named state
   hosts: clab_nodes
   gather_facts: no

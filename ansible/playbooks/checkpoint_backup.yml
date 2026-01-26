@@ -1,4 +1,15 @@
 ---
+# Playbook: checkpoint_backup.yml
+# Purpose:
+#   - Back up Aruba CX running configuration
+#   - Save configs by logical "state" (ospf, bgp, vxlan, etc.)
+#   - Default state is "latest" if none is provided
+#
+# Usage:
+#   ansible-playbook checkpoint_backup.yml
+#   ansible-playbook checkpoint_backup.yml -e state=ospf
+#   ansible-playbook checkpoint_backup.yml -l cx1
+
 - name: Backup running config into a named state
   hosts: clab_nodes
   gather_facts: no
