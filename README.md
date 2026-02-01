@@ -55,6 +55,16 @@ ansible/
 
 
 ## Progress Log
+2026-02-01:
+restored the ospf-single-area state using the checkpoint_backup playbook and -e state=ospf-single-area.
+tested things with single area, included adding md5 authentication, and bfd on inter-router links.
+did some packet captures on Host B.
+Will sync the branch with git hub
+
+
+2026-01-20:
+created branch lab/ospf.  Built out simple, single area ospf network for lab work for aruba-cx-basic
+Did some practice on single are work
 
 2026-01-25:
 refreshed cxbasic.  Configure ansible playbooks 'checkpoint_backup' and 'checkpoint_restore' that will backup/restore running config of cx devices in lab.  Run the playbook with -e state=state_name where state_name is dir in the documentation folder that allows to keep config in various state or lab.  Can be used for various labs of same topology(ie OSPF, OSPF-multi-area, iBGP, eBGP,vxlan, etc)

@@ -38,6 +38,11 @@
             ],
             "ip4_address": "192.168.102.1/30",
             "name": "1/1/1",
+            "ospf_auth_md5_keys": {
+                "1": "AQBapaIPEvRoG3z/9zjeqYilTAN80Cbp2QDam4WU+I+EOSHtAwAAAO2OoQ=="
+            },
+            "ospf_auth_type": "md5",
+            "ospf_bfd": "enable",
             "ospf_if_type": "ospf_iftype_pointopoint"
         },
         "1%2F1%2F10": {
@@ -173,6 +178,11 @@
             ],
             "ip4_address": "192.168.103.1/30",
             "name": "1/1/3",
+            "ospf_auth_md5_keys": {
+                "1": "AQBapaTBUha7nWkFU698DbqgyYnJDTrTHwZbVkAdr/+tIg4jAwAAAB4AHw=="
+            },
+            "ospf_auth_type": "md5",
+            "ospf_bfd": "enable",
             "ospf_if_type": "ospf_iftype_pointopoint"
         },
         "1%2F1%2F30": {
@@ -359,6 +369,7 @@
         }
     },
     "System": {
+        "bfd_enable": true,
         "hostname": "aoscx1",
         "mgmt_intf": {
             "default_gateway": "10.0.0.2",
