@@ -8,10 +8,8 @@ topology:
       mgmt-ipv4: 172.20.20.10
     host1:
       kind: linux
-      image: alpine:latest
+      image: nicolaka/netshoot
       exec:
-        - apk update
-        - apk add iproute2 tcpdump iperf3 nano
         - ip addr add 192.168.10.2/24 dev eth1
   links:
     - endpoints: ["cx1:1/1/2","host1:eth1"]
