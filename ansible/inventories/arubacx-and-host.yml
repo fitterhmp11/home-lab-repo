@@ -1,4 +1,6 @@
 all:
+  vars:
+    lab_name: arubacx-and-host
   children:
     clab_nodes:
       hosts:

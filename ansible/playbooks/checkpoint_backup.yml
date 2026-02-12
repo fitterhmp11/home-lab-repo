@@ -4,6 +4,7 @@
 #   - Back up Aruba CX running configuration
 #   - Save configs by logical "state" (ospf, bgp, vxlan, etc.)
 #   - Default state is "latest" if none is provided
+#   - It will look for the ansible hostfile variable named 'lab_name' to use the correct directory
 #
 # Usage:
 #   ansible-playbook checkpoint_backup.yml
@@ -21,11 +22,11 @@
   tasks:
     - name: Ensure state directory exists
       file:
-        path: "/ansible/documentation/states/{{ state_name }}"
+        path: "/ansible/documentation/states/clab/{{ lab_name | default('common') }}/{{ state_name }}"
         state: directory
         mode: '0755'
 
     - name: Copy Running Config to local as JSON # only works with JSON output
       aoscx_backup_config:
         config_name: running-config-json
-        output_file: /ansible/documentation/states/{{ state_name }}/{{ inventory_hostname }}.json
+        output_file: /ansible/documentation/states/clab/{{ lab_name | default('common') }}/{{ state_name }}/{{ inventory_hostname }}.json
