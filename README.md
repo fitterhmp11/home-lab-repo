@@ -55,10 +55,6 @@ ansible/
 
 
 ## Progress Log
-2026-02-12:
-created the arubacx-and-host clab.
-updated the checkpoint_restore and checkpoint_backup playbooks and the documentation/state directory structure, to use a variable name in each toplogogy file to use as a directory for storing state.  This allows the same playbook to be used and pointed to different clab toplogogies, as long as you point to correct inventory file when run the playbook.  THis will allow better organization of states where they can be stored within a particluar clab toplogogy.
-
 
 2026-01-25:
 refreshed cxbasic.  Configure ansible playbooks 'checkpoint_backup' and 'checkpoint_restore' that will backup/restore running config of cx devices in lab.  Run the playbook with -e state=state_name where state_name is dir in the documentation folder that allows to keep config in various state or lab.  Can be used for various labs of same topology(ie OSPF, OSPF-multi-area, iBGP, eBGP,vxlan, etc)

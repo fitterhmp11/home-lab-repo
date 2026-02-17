@@ -1,0 +1,14 @@
+name: fgt-and-host
+topology:
+  nodes:
+    fgt1:
+      kind: fortinet_fortigate
+      image: vrnetlab/vr-fortios:7.4.11
+    hostA:
+      kind: linux
+      image: nicolaka/netshoot
+      exec:
+        - ip addr add 10.1.1.2/24 dev eth1
+
+  links:
+    - endpoints: ["fgt1:port2","hostA:eth1"]
