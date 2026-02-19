@@ -38,15 +38,15 @@
   tasks:
     - name: Check that state directory exists
       stat:
-        path: "/ansible/documentation/states/{{ state_name }}"
+        path: "/ansible/documentation/states/clab/{{ lab_topo }}/{{ state_name }}"
       register: state_dir
 
     - name: Fail if state directory does not exist
       fail:
-        msg: "State directory /ansible/documentation/states/{{ state_name }} does not exist!"
+        msg: "State directory /ansible/documentation/states/clab/{{ lab_topo }}/{{ state_name }} does not exist!"
       when: not state_dir.stat.exists
 
     - name: Restore JSON config to device
       aoscx_upload_config:
         config_name: 'running-config'
-        config_file: "{{ config_file | default('/ansible/documentation/states/' ~ state_name ~ '/' ~ inventory_hostname ~ '.json') }}"
+        config_file: "{{ config_file | default('/ansible/documentation/states/clab/' ~ lab_topo ~ '/' ~ state_name ~ '/' ~ inventory_hostname ~ '.json') }}"
