@@ -186,7 +186,8 @@
                 "1": "AQBapcKP74zPTho+IYsvRJeWRitNeCms2nWDk2X4onSQINsZAwAAADzjMw=="
             },
             "ospf_auth_type": "md5",
-            "ospf_bfd": "enable"
+            "ospf_bfd": "enable",
+            "ospf_if_out_cost": 10000
         },
         "1%2F1%2F30": {
             "interfaces": [

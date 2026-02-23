@@ -28,6 +28,10 @@
         "loopback1": {
             "name": "loopback1",
             "type": "loopback"
+        },
+        "loopback2": {
+            "name": "loopback2",
+            "type": "loopback"
         }
     },
     "Port": {
@@ -366,6 +370,13 @@
             ],
             "ip4_address": "172.16.1.1/32",
             "name": "loopback1"
+        },
+        "loopback2": {
+            "interfaces": [
+                "loopback2"
+            ],
+            "ip4_address": "10.1.1.1/24",
+            "name": "loopback2"
         }
     },
     "System": {
@@ -649,6 +660,9 @@
                                 },
                                 "loopback1": {
                                     "port": "loopback1"
+                                },
+                                "loopback2": {
+                                    "port": "loopback2"
                                 }
                             }
                         }
