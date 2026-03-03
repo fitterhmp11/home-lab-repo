@@ -29,11 +29,11 @@ topology:
     site_cx20:
       group: 6
       kind: aruba_aoscx
-      image: vrnetlab/aruba_arubaos-cx:2025061623153
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
     site_cx11:
       group: 7
       kind: aruba_aoscx
-      image: vrnetlab/aruba_arubaos-cx:2025061623153
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
     
   links:
   # links from core
