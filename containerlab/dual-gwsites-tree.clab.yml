@@ -1,0 +1,41 @@
+name: dual-gwsites-tree
+
+topology:
+  nodes:
+    core_cx1:
+      group: 9
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+    hub1_cx2:
+      group: 8
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+    hub2_cx3:
+      group: 8
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+    subhub1_cx10:
+      group: 7
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+    gw1_cx100:
+      group: 10
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+    gw2_cx101:
+      group: 10
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:20250616231531
+    site_cx20:
+      group: 6
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:2025061623153
+    site_cx11:
+      group: 7
+      kind: aruba_aoscx
+      image: vrnetlab/aruba_arubaos-cx:2025061623153
+    
+  links:
+    - endpoints: [ "core_cx1:1/1/1", "hub1_cx2:1/1/2" ]
+    - endpoints: [ "core_cx1:1/1/2", "hub2_cx3:1/1/2" ]
+
